@@ -1,0 +1,18 @@
+input CreateFoodInput {
+    name: String!
+    foodType: String!
+}
+
+type Food {
+    id: ID!
+    name: String!
+    foodType: String!
+}
+
+type Node {
+    id: ID!
+}
+
+type FoodMutation {
+    createFood(input: CreateFoodInput!) : Food!
+}

@@ -1,5 +1,6 @@
 package com.gym.food.domain.command;
 
+import com.gym.common.domain.CommandHandler;
 import com.gym.food.domain.event.FoodCreatedEvent;
 import com.gym.food.domain.event.FoodCreatedEventHandler;
 import com.gym.food.domain.model.Food;
@@ -8,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CreateFoodCommandHandler extends CommandHandler<Food, CreateFoodCommand>{
+public class CreateFoodCommandHandler extends CommandHandler<Food, CreateFoodCommand> {
     private final FoodCreatedEventHandler foodCreatedEventHandler;
 
     private final FoodRepository foodRepository;

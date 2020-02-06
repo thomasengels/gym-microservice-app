@@ -1,5 +1,6 @@
 package com.gym.food.domain.event;
 
+import com.gym.common.domain.EventHandler;
 import com.gym.food.domain.model.Food;
 import org.springframework.stereotype.Component;
 

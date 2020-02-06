@@ -1,6 +1,4 @@
-package com.gym.food.domain.event;
-
-import com.gym.food.domain.model.AbstractEntity;
+package com.gym.common.domain;
 
 import javax.persistence.MappedSuperclass;
 

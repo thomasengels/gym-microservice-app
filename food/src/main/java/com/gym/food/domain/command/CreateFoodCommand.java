@@ -1,12 +1,13 @@
 package com.gym.food.domain.command;
 
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.gym.common.domain.Command;
 import com.gym.food.domain.model.FoodType;
 
 import javax.persistence.Entity;
 
 @Entity
-public class CreateFoodCommand extends Command{
+public class CreateFoodCommand extends Command {
     @JsonValue
     private String name;
     @JsonValue

@@ -13,6 +13,32 @@ type Node {
     id: ID!
 }
 
+input Page {
+    index: Int
+    size: Int
+}
+
+interface IPage {
+    index: Int
+    size: Int
+}
+
+type FoodPage implements IPage {
+    index: Int
+    size: Int
+    content: [Food]
+}
+
 type FoodMutation {
     createFood(input: CreateFoodInput!) : Food!
 }
+
+type FoodQuery {
+    getAll(page: Page): FoodPage!
+}
+
+schema {
+    query: FoodQuery
+    mutation: FoodMutation
+}
+

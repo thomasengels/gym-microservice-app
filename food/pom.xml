@@ -3,7 +3,6 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.gym</groupId>
     <artifactId>food</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>food</name>
@@ -11,10 +10,10 @@
     <packaging>pom</packaging>
 
     <parent>
-        <groupId>com.gym</groupId>
-        <artifactId>common</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <groupId>com</groupId>
+        <artifactId>gym</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath/>
     </parent>
 
     <properties>
@@ -27,9 +26,23 @@
             <artifactId>common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.graphql-java</groupId>
+            <artifactId>graphql-spring-boot-starter</artifactId>
+            <version>5.0.2</version>
+        </dependency>
     </dependencies>
 
     <build>
+        <resources>
+            <resource>
+                <directory>resources</directory>
+                <targetPath>${project.build.outputDirectory}</targetPath>
+                <includes>
+                    <include>application.properties</include>
+                </includes>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -37,5 +50,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

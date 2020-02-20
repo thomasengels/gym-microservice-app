@@ -12,4 +12,12 @@ public class CreateFoodInput {
         this.name = name;
         this.foodType = foodType;
     }
+
+  public String getFoodType() {
+    return foodType;
+  }
+
+  public String getName() {
+    return name;
+  }
 }

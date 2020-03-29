@@ -10,23 +10,23 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class CreateFoodCommandHandler extends CommandHandler<Food, CreateFoodCommand> {
-    private final FoodCreatedEventHandler foodCreatedEventHandler;
+  private final FoodCreatedEventHandler foodCreatedEventHandler;
 
-    private final FoodRepository foodRepository;
+  private final FoodRepository foodRepository;
 
-    @Autowired
-    public CreateFoodCommandHandler(FoodCreatedEventHandler foodCreatedEventHandler, FoodRepository foodRepository) {
-        this.foodCreatedEventHandler = foodCreatedEventHandler;
-        this.foodRepository = foodRepository;
-    }
+  @Autowired
+  public CreateFoodCommandHandler(FoodCreatedEventHandler foodCreatedEventHandler, FoodRepository foodRepository) {
+    this.foodCreatedEventHandler = foodCreatedEventHandler;
+    this.foodRepository = foodRepository;
+  }
 
-    @Override
-    public Food handle(CreateFoodCommand command) {
-        Food food = new Food();
-        food.setName(command.getName());
-        food.setFoodType(command.getFoodType());
-        this.foodCreatedEventHandler.process(food, new FoodCreatedEvent());
+  @Override
+  public Food handle(CreateFoodCommand command) {
+    Food food = new Food();
+    food.setName(command.getName());
+    food.setFoodType(command.getFoodType());
+    this.foodCreatedEventHandler.process(food, new FoodCreatedEvent());
 
-        return this.foodRepository.save(food);
-    }
+    return this.foodRepository.save(food);
+  }
 }

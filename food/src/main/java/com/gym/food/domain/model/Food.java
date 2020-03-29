@@ -9,21 +9,37 @@ import javax.persistence.Entity;
 
 @Entity
 public class Food extends AbstractEntity {
-    @Getter
-    @Setter
-    private String name;
+  @Getter
+  @Setter
+  private String name;
 
-    @Getter
-    @Setter
-    private FoodType foodType;
+  @Getter
+  @Setter
+  private FoodType foodType;
 
-    @PersistenceConstructor
-    public Food(String name, FoodType foodType) {
-        this.name = name;
-        this.foodType = foodType;
-    }
+  @PersistenceConstructor
+  public Food(String name, FoodType foodType) {
+    this.name = name;
+    this.foodType = foodType;
+  }
 
-    public Food() {
+  public Food() {
 
-    }
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public FoodType getFoodType() {
+    return foodType;
+  }
+
+  public void setFoodType(FoodType foodType) {
+    this.foodType = foodType;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
 }

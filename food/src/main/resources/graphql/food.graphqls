@@ -1,44 +1,40 @@
 input CreateFoodInput {
-    name: String!
-    foodType: String!
+  name: String!
+  foodType: String!
 }
 
 type Food {
-    id: ID!
-    name: String!
-    foodType: String!
-}
-
-type Node {
-    id: ID!
+  id: ID!
+  name: String!
+  foodType: String!
 }
 
 input Page {
-    index: Int
-    size: Int
+  index: Int
+  size: Int
 }
 
 interface IPage {
-    index: Int
-    size: Int
+  index: Int
+  size: Int
 }
 
 type FoodPage implements IPage {
-    index: Int
-    size: Int
-    content: [Food]
+  index: Int
+  size: Int
+  content: [Food]
 }
 
-type FoodMutation {
-    createFood(input: CreateFoodInput!) : Food!
+type Mutation {
+  createFood(input: CreateFoodInput!) : Food!
 }
 
-type FoodQuery {
-    getAll(page: Page): FoodPage!
+type Query {
+  getAll(page: Page): FoodPage!
 }
 
 schema {
-    query: FoodQuery
-    mutation: FoodMutation
+  query: Query
+  mutation: Mutation
 }
 

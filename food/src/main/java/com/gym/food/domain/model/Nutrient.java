@@ -8,7 +8,7 @@ import javax.persistence.Entity;
 
 @Entity
 public class Nutrient extends AbstractEntity {
-    @Getter
-    @Setter
-    private String name;
+  @Getter
+  @Setter
+  private String name;
 }

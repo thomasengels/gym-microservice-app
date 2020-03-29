@@ -1,20 +1,18 @@
 package com.gym.food.service.graphql.types;
 
-import java.util.List;
+public class Page{
+  int size = 10;
+  int index = 1;
 
-public abstract class Page<T> {
-    int size = 10;
-    int index = 1;
+  public int getIndex() {
+    return index;
+  }
 
-    List<T> content;
+  public int getSize() {
+    return size;
+  }
 
-    protected abstract List<T> getContent();
+  public Page(){
 
-    public int getIndex() {
-        return index;
-    }
-
-    public int getSize() {
-        return size;
-    }
+  }
 }

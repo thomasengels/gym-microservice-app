@@ -6,8 +6,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class FoodCreatedEventHandler extends EventHandler<Food, FoodCreatedEvent> {
-    @Override
-    public void process(Food entity, FoodCreatedEvent event) {
+  @Override
+  public void process(Food entity, FoodCreatedEvent event) {
 
-    }
+  }
 }
